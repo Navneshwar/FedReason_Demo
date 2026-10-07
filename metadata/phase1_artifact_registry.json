@@ -1,0 +1,24 @@
+{
+  "models": {
+    "MLP": "/content/drive/MyDrive/FedReason/models/phase1_centralized_mlp.joblib",
+    "RandomForest": "/content/drive/MyDrive/FedReason/models/phase1_centralized_rf.joblib",
+    "GradientBoosting": "/content/drive/MyDrive/FedReason/models/phase1_centralized_gbt.joblib",
+    "Scaler": "/content/drive/MyDrive/FedReason/models/phase1_standard_scaler.joblib"
+  },
+  "results": {
+    "MLP_results": "/content/drive/MyDrive/FedReason/results/phase1_centralized_baseline.csv",
+    "Client_results": "/content/drive/MyDrive/FedReason/results/phase1_client_test_results.csv",
+    "Confusion_matrices": "/content/drive/MyDrive/FedReason/results/phase1_client_confusion_matrices.csv",
+    "Dataset_inventory": "/content/drive/MyDrive/FedReason/results/phase1_dataset_inventory.csv",
+    "Model_comparison": "/content/drive/MyDrive/FedReason/results/phase1_model_comparison.csv",
+    "RF_results": "/content/drive/MyDrive/FedReason/results/phase1_rf_results.csv",
+    "GBT_results": "/content/drive/MyDrive/FedReason/results/phase1_gbt_results.csv",
+    "Feature_importance": "/content/drive/MyDrive/FedReason/results/phase1_feature_importance.csv",
+    "MITRE_mapping_csv": "/content/drive/MyDrive/FedReason/results/phase1_mitre_mapping.csv",
+    "Interpretability": "/content/drive/MyDrive/FedReason/results/phase1_feature_mitre_interpretability.csv"
+  },
+  "metadata": {
+    "MITRE_mapping_json": "/content/drive/MyDrive/FedReason/metadata/phase1_mitre_mapping.json",
+    "MLP_config": "/content/drive/MyDrive/FedReason/metadata/phase1_mlp_config.json"
+  }
+}

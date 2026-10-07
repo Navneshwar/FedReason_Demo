@@ -1,0 +1,36 @@
+{
+  "audit_type": "empirical",
+  "audit_timestamp": "2026-10-06T16:11:55Z",
+  "formal_dp_guarantee": false,
+  "membership_inference_attack": {
+    "dataset": "CICIDS2017",
+    "members": 5000,
+    "non_members": 5000,
+    "score": "negative per-sample BCE loss",
+    "roc_auc": 0.49379648,
+    "attack_advantage": 0.012407040000000036,
+    "synthetic_loss_distribution": false,
+    "interpretation": "Measured membership signal against the actual canonical FedProx model. This is an empirical audit, not a formal privacy guarantee."
+  },
+  "gradient_inversion_attack": {
+    "model": "canonical Phase 2 FedProx MLP",
+    "input_type": "real standardized network-flow vectors",
+    "target_label_known_to_attacker": true,
+    "B1": {
+      "initial_gradient_match_loss": 0.5700259208679199,
+      "final_gradient_match_loss": 0.0009543391643092036,
+      "initial_feature_mse": 1.4042798280715942,
+      "final_feature_mse": 1.4338510036468506,
+      "final_cosine_similarity": 0.6003966331481934
+    },
+    "B32": {
+      "initial_gradient_match_loss": 183.04090881347656,
+      "final_gradient_match_loss": 13.40330696105957,
+      "initial_feature_mse": 3.5440523624420166,
+      "final_feature_mse": 2.6087749004364014,
+      "final_cosine_similarity": 0.07901932299137115
+    },
+    "interpretation": "Measured reconstruction behavior against real model gradients. No claim of universal non-reconstructability is made."
+  },
+  "plot_file": "phase5_privacy_reconstruction_plot.png"
+}

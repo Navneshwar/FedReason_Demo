@@ -1,0 +1,1402 @@
+[
+  {
+    "alert_id": "ALERT-FR-DEMO-001",
+    "timestamp": "2026-10-06T12:23:13Z",
+    "flow_id": "FLOW-VAL-CICIDS2017-1554",
+    "severity": "MEDIUM",
+    "threat_verdict": "MALICIOUS ATTACK",
+    "confidence_score": 0.7120622568093385,
+    "fused_precision": 0.7120622568093385,
+    "triggered_fsra_rule": {
+      "fsra_rule_id": "FSRA_RULE_018",
+      "rule_active": true,
+      "corroborating_org_count": 1,
+      "corroborating_orgs": [
+        "Org_B"
+      ],
+      "consensus_tier": "Tier 3: Single-Silo Localized Consensus (1 Organization)",
+      "conditions_satisfied": [
+        {
+          "feature": "packet_size_max",
+          "value": 0.6733053922653198,
+          "min": 0.5228923857212067,
+          "max": Infinity
+        },
+        {
+          "feature": "psh_flag_ratio",
+          "value": -0.6018076539039612,
+          "min": -Infinity,
+          "max": -0.5932069420814514
+        },
+        {
+          "feature": "packet_size_std",
+          "value": 0.5625573396682739,
+          "min": -Infinity,
+          "max": 0.8952242434024811
+        },
+        {
+          "feature": "packet_rate",
+          "value": -0.20191265642642975,
+          "min": -Infinity,
+          "max": -0.20173120498657227
+        }
+      ]
+    },
+    "threat_intelligence": {
+      "mitre_technique_id": "T1190",
+      "mitre_technique_name": "Exploit Public-Facing Application",
+      "attack_family": "Execution",
+      "intelligence_justification": "XSS payloads traverse HTTP, appear as normal-rate flows with slightly larger-than-typical payload sizes."
+    },
+    "mapping_status": "ATT&CK_MAPPING_FROM_FROZEN_FSRA",
+    "federated_lineage_trace": {
+      "contributing_organizations_count": 1,
+      "contributing_local_rules": [
+        {
+          "local_rule_id": "Org_B_RULE_014",
+          "originating_organization": "Org_B",
+          "local_precision": 0.7120622568093385,
+          "local_support": 257,
+          "contribution_weight": 0.7120622568093385
+        }
+      ],
+      "summary": "Matched frozen FSRA rule FSRA_RULE_018 and traced 1 independent organizational silo(s) through 1 contributing local rule(s)."
+    },
+    "automated_mitigation_playbook": {
+      "playbook_id": "PB-EXPLOIT-01",
+      "title": "Exploit Public-Facing Service Investigation",
+      "action_tier": "Tier 1 \u2014 Service Isolation",
+      "recommended_action": "Inspect the exposed service, isolate the affected asset where necessary, and review application and authentication logs for exploitation evidence."
+    },
+    "flow_metrics_snapshot": {
+      "packet_rate": 0.5983281135559082,
+      "total_packets": 68.0,
+      "header_length": 1456.0,
+      "packet_size_min": 0.0,
+      "packet_size_max": 1662.0,
+      "packet_size_mean": 325.4927673339844,
+      "packet_size_std": 488.7119140625,
+      "fin_flag_ratio": 0.0,
+      "syn_flag_ratio": 0.014705882407724857,
+      "psh_flag_ratio": 0.0,
+      "ack_flag_ratio": 0.014705882407724857,
+      "ack_count": 1.0,
+      "syn_count": 1.0,
+      "fin_count": 0.0
+    },
+    "evaluation_metadata": {
+      "source_split": "validation",
+      "rule_matching_feature_space": "Phase 1 frozen StandardScaler output",
+      "display_feature_space": "original validation values",
+      "test_data_used": false
+    }
+  },
+  {
+    "alert_id": "ALERT-FR-DEMO-002",
+    "timestamp": "2026-10-06T12:23:13Z",
+    "flow_id": "FLOW-VAL-CIC_UNSW_NB15-304",
+    "severity": "CRITICAL",
+    "threat_verdict": "MALICIOUS ATTACK",
+    "confidence_score": 1.0,
+    "fused_precision": 0.8168551724137931,
+    "triggered_fsra_rule": {
+      "fsra_rule_id": "FSRA_RULE_002",
+      "rule_active": true,
+      "corroborating_org_count": 3,
+      "corroborating_orgs": [
+        "Org_A",
+        "Org_B",
+        "Org_C"
+      ],
+      "consensus_tier": "Tier 1: Global Multi-Silo Consensus (3 Organizations)",
+      "conditions_satisfied": [
+        {
+          "feature": "packet_size_std",
+          "value": 0.976879358291626,
+          "min": -Infinity,
+          "max": Infinity
+        },
+        {
+          "feature": "psh_flag_ratio",
+          "value": 0.6982932686805725,
+          "min": -Infinity,
+          "max": Infinity
+        },
+        {
+          "feature": "packet_size_mean",
+          "value": 0.9694548845291138,
+          "min": -Infinity,
+          "max": Infinity
+        },
+        {
+          "feature": "header_length",
+          "value": -0.019798114895820618,
+          "min": -Infinity,
+          "max": Infinity
+        },
+        {
+          "feature": "packet_rate",
+          "value": -0.20186394453048706,
+          "min": -Infinity,
+          "max": Infinity
+        },
+        {
+          "feature": "total_packets",
+          "value": -0.026807649061083794,
+          "min": -Infinity,
+          "max": -0.023177466355264187
+        },
+        {
+          "feature": "syn_flag_ratio",
+          "value": 1.1926817893981934,
+          "min": -Infinity,
+          "max": Infinity
+        },
+        {
+          "feature": "packet_size_max",
+          "value": 0.5214734077453613,
+          "min": -Infinity,
+          "max": Infinity
+        },
+        {
+          "feature": "packet_size_min",
+          "value": -0.30902931094169617,
+          "min": -Infinity,
+          "max": Infinity
+        },
+        {
+          "feature": "ack_flag_ratio",
+          "value": 0.8792473077774048,
+          "min": -Infinity,
+          "max": Infinity
+        },
+        {
+          "feature": "fin_flag_ratio",
+          "value": 0.386335164308548,
+          "min": -Infinity,
+          "max": Infinity
+        },
+        {
+          "feature": "fin_count",
+          "value": 1.426806926727295,
+          "min": 0.9534240365028381,
+          "max": Infinity
+        }
+      ]
+    },
+    "threat_intelligence": {
+      "mitre_technique_id": "T1498",
+      "mitre_technique_name": "Network Denial of Service",
+      "attack_family": "DoS/DDoS",
+      "intelligence_justification": "Slowloris keeps partial HTTP connections open. Visible as: high SYN ratio, low fin/rst, tiny packet size. Maps to T1498 (Network DoS) \u2014 application-layer variant."
+    },
+    "mapping_status": "ATT&CK_MAPPING_FROM_FROZEN_FSRA",
+    "federated_lineage_trace": {
+      "contributing_organizations_count": 3,
+      "contributing_local_rules": [
+        {
+          "local_rule_id": "Org_A_RULE_004",
+          "originating_organization": "Org_A",
+          "local_precision": 0.6481846327047566,
+          "local_support": 10659,
+          "contribution_weight": 0.6481846327047566
+        },
+        {
+          "local_rule_id": "Org_A_RULE_007",
+          "originating_organization": "Org_A",
+          "local_precision": 0.5900900900900901,
+          "local_support": 666,
+          "contribution_weight": 0.5900900900900901
+        },
+        {
+          "local_rule_id": "Org_A_RULE_011",
+          "originating_organization": "Org_A",
+          "local_precision": 0.9911894273127754,
+          "local_support": 227,
+          "contribution_weight": 0.9911894273127754
+        },
+        {
+          "local_rule_id": "Org_A_RULE_013",
+          "originating_organization": "Org_A",
+          "local_precision": 0.9876292153872225,
+          "local_support": 11802,
+          "contribution_weight": 0.9876292153872225
+        },
+        {
+          "local_rule_id": "Org_A_RULE_014",
+          "originating_organization": "Org_A",
+          "local_precision": 0.9996637525218561,
+          "local_support": 11896,
+          "contribution_weight": 0.9996637525218561
+        },
+        {
+          "local_rule_id": "Org_A_RULE_018",
+          "originating_organization": "Org_A",
+          "local_precision": 0.7204610951008645,
+          "local_support": 347,
+          "contribution_weight": 0.7204610951008645
+        },
+        {
+          "local_rule_id": "Org_A_RULE_019",
+          "originating_organization": "Org_A",
+          "local_precision": 0.739751552795031,
+          "local_support": 1610,
+          "contribution_weight": 0.739751552795031
+        },
+        {
+          "local_rule_id": "Org_A_RULE_020",
+          "originating_organization": "Org_A",
+          "local_precision": 0.9556274363440325,
+          "local_support": 36171,
+          "contribution_weight": 0.9556274363440325
+        },
+        {
+          "local_rule_id": "Org_B_RULE_005",
+          "originating_organization": "Org_B",
+          "local_precision": 0.6462765957446809,
+          "local_support": 376,
+          "contribution_weight": 0.6462765957446809
+        },
+        {
+          "local_rule_id": "Org_B_RULE_007",
+          "originating_organization": "Org_B",
+          "local_precision": 0.5704590818363273,
+          "local_support": 5010,
+          "contribution_weight": 0.5704590818363273
+        },
+        {
+          "local_rule_id": "Org_B_RULE_015",
+          "originating_organization": "Org_B",
+          "local_precision": 0.8942731277533039,
+          "local_support": 227,
+          "contribution_weight": 0.8942731277533039
+        },
+        {
+          "local_rule_id": "Org_B_RULE_016",
+          "originating_organization": "Org_B",
+          "local_precision": 0.6859205776173285,
+          "local_support": 277,
+          "contribution_weight": 0.6859205776173285
+        },
+        {
+          "local_rule_id": "Org_B_RULE_017",
+          "originating_organization": "Org_B",
+          "local_precision": 0.5576208178438662,
+          "local_support": 269,
+          "contribution_weight": 0.5576208178438662
+        },
+        {
+          "local_rule_id": "Org_B_RULE_019",
+          "originating_organization": "Org_B",
+          "local_precision": 0.9446902654867256,
+          "local_support": 452,
+          "contribution_weight": 0.9446902654867256
+        },
+        {
+          "local_rule_id": "Org_B_RULE_020",
+          "originating_organization": "Org_B",
+          "local_precision": 0.9525423728813559,
+          "local_support": 590,
+          "contribution_weight": 0.9525423728813559
+        },
+        {
+          "local_rule_id": "Org_B_RULE_021",
+          "originating_organization": "Org_B",
+          "local_precision": 0.9437229437229437,
+          "local_support": 231,
+          "contribution_weight": 0.9437229437229437
+        },
+        {
+          "local_rule_id": "Org_B_RULE_022",
+          "originating_organization": "Org_B",
+          "local_precision": 0.9743589743589743,
+          "local_support": 195,
+          "contribution_weight": 0.9743589743589743
+        },
+        {
+          "local_rule_id": "Org_B_RULE_023",
+          "originating_organization": "Org_B",
+          "local_precision": 0.9845679012345679,
+          "local_support": 324,
+          "contribution_weight": 0.9845679012345679
+        },
+        {
+          "local_rule_id": "Org_C_RULE_001",
+          "originating_organization": "Org_C",
+          "local_precision": 1.0,
+          "local_support": 3613,
+          "contribution_weight": 1.0
+        },
+        {
+          "local_rule_id": "Org_C_RULE_002",
+          "originating_organization": "Org_C",
+          "local_precision": 0.610578837639673,
+          "local_support": 42689,
+          "contribution_weight": 0.610578837639673
+        },
+        {
+          "local_rule_id": "Org_C_RULE_003",
+          "originating_organization": "Org_C",
+          "local_precision": 0.8435505704892671,
+          "local_support": 5171,
+          "contribution_weight": 0.8435505704892671
+        },
+        {
+          "local_rule_id": "Org_C_RULE_004",
+          "originating_organization": "Org_C",
+          "local_precision": 0.9993747394747812,
+          "local_support": 4798,
+          "contribution_weight": 0.9993747394747812
+        },
+        {
+          "local_rule_id": "Org_C_RULE_006",
+          "originating_organization": "Org_C",
+          "local_precision": 0.9982458937968426,
+          "local_support": 6271,
+          "contribution_weight": 0.9982458937968426
+        },
+        {
+          "local_rule_id": "Org_C_RULE_007",
+          "originating_organization": "Org_C",
+          "local_precision": 0.847682119205298,
+          "local_support": 151,
+          "contribution_weight": 0.847682119205298
+        },
+        {
+          "local_rule_id": "Org_C_RULE_008",
+          "originating_organization": "Org_C",
+          "local_precision": 0.9294117647058824,
+          "local_support": 255,
+          "contribution_weight": 0.9294117647058824
+        },
+        {
+          "local_rule_id": "Org_C_RULE_010",
+          "originating_organization": "Org_C",
+          "local_precision": 0.6798780487804879,
+          "local_support": 328,
+          "contribution_weight": 0.6798780487804879
+        },
+        {
+          "local_rule_id": "Org_C_RULE_013",
+          "originating_organization": "Org_C",
+          "local_precision": 0.7865853658536586,
+          "local_support": 164,
+          "contribution_weight": 0.7865853658536586
+        },
+        {
+          "local_rule_id": "Org_C_RULE_014",
+          "originating_organization": "Org_C",
+          "local_precision": 0.6916666666666667,
+          "local_support": 120,
+          "contribution_weight": 0.6916666666666667
+        },
+        {
+          "local_rule_id": "Org_C_RULE_015",
+          "originating_organization": "Org_C",
+          "local_precision": 0.963963963963964,
+          "local_support": 111,
+          "contribution_weight": 0.963963963963964
+        }
+      ],
+      "summary": "Matched frozen FSRA rule FSRA_RULE_002 and traced 3 independent organizational silo(s) through 29 contributing local rule(s)."
+    },
+    "automated_mitigation_playbook": {
+      "playbook_id": "PB-DOS-01",
+      "title": "Denial-of-Service Containment",
+      "action_tier": "Tier 1 \u2014 Traffic Containment",
+      "recommended_action": "Rate-limit or block the offending flow pattern, isolate the affected endpoint or segment, and correlate surrounding traffic for additional attack sources."
+    },
+    "flow_metrics_snapshot": {
+      "packet_rate": 8.44647216796875,
+      "total_packets": 16.0,
+      "header_length": 528.0,
+      "packet_size_min": 0.0,
+      "packet_size_max": 1448.0,
+      "packet_size_mean": 481.8823547363281,
+      "packet_size_std": 676.3521728515625,
+      "fin_flag_ratio": 0.125,
+      "syn_flag_ratio": 0.25,
+      "psh_flag_ratio": 0.25,
+      "ack_flag_ratio": 0.875,
+      "ack_count": 14.0,
+      "syn_count": 4.0,
+      "fin_count": 2.0
+    },
+    "evaluation_metadata": {
+      "source_split": "validation",
+      "rule_matching_feature_space": "Phase 1 frozen StandardScaler output",
+      "display_feature_space": "original validation values",
+      "test_data_used": false
+    }
+  },
+  {
+    "alert_id": "ALERT-FR-DEMO-003",
+    "timestamp": "2026-10-06T12:23:13Z",
+    "flow_id": "FLOW-VAL-CIC_UNSW_NB15-2414",
+    "severity": "MEDIUM",
+    "threat_verdict": "MALICIOUS ATTACK",
+    "confidence_score": 0.7120622568093385,
+    "fused_precision": 0.7120622568093385,
+    "triggered_fsra_rule": {
+      "fsra_rule_id": "FSRA_RULE_018",
+      "rule_active": true,
+      "corroborating_org_count": 1,
+      "corroborating_orgs": [
+        "Org_B"
+      ],
+      "consensus_tier": "Tier 3: Single-Silo Localized Consensus (1 Organization)",
+      "conditions_satisfied": [
+        {
+          "feature": "packet_size_max",
+          "value": 0.5299873352050781,
+          "min": 0.5228923857212067,
+          "max": Infinity
+        },
+        {
+          "feature": "psh_flag_ratio",
+          "value": -0.6018076539039612,
+          "min": -Infinity,
+          "max": -0.5932069420814514
+        },
+        {
+          "feature": "packet_size_std",
+          "value": 0.47390231490135193,
+          "min": -Infinity,
+          "max": 0.8952242434024811
+        },
+        {
+          "feature": "packet_rate",
+          "value": -0.20175224542617798,
+          "min": -Infinity,
+          "max": -0.20173120498657227
+        }
+      ]
+    },
+    "threat_intelligence": {
+      "mitre_technique_id": "T1190",
+      "mitre_technique_name": "Exploit Public-Facing Application",
+      "attack_family": "Execution",
+      "intelligence_justification": "XSS payloads traverse HTTP, appear as normal-rate flows with slightly larger-than-typical payload sizes."
+    },
+    "mapping_status": "ATT&CK_MAPPING_FROM_FROZEN_FSRA",
+    "federated_lineage_trace": {
+      "contributing_organizations_count": 1,
+      "contributing_local_rules": [
+        {
+          "local_rule_id": "Org_B_RULE_014",
+          "originating_organization": "Org_B",
+          "local_precision": 0.7120622568093385,
+          "local_support": 257,
+          "contribution_weight": 0.7120622568093385
+        }
+      ],
+      "summary": "Matched frozen FSRA rule FSRA_RULE_018 and traced 1 independent organizational silo(s) through 1 contributing local rule(s)."
+    },
+    "automated_mitigation_playbook": {
+      "playbook_id": "PB-EXPLOIT-01",
+      "title": "Exploit Public-Facing Service Investigation",
+      "action_tier": "Tier 1 \u2014 Service Isolation",
+      "recommended_action": "Inspect the exposed service, isolate the affected asset where necessary, and review application and authentication logs for exploitation evidence."
+    },
+    "flow_metrics_snapshot": {
+      "packet_rate": 26.443355560302734,
+      "total_packets": 38.0,
+      "header_length": 808.0,
+      "packet_size_min": 0.0,
+      "packet_size_max": 1460.0,
+      "packet_size_mean": 215.1794891357422,
+      "packet_size_std": 448.5613708496094,
+      "fin_flag_ratio": 0.05263157933950424,
+      "syn_flag_ratio": 0.10526315867900848,
+      "psh_flag_ratio": 0.0,
+      "ack_flag_ratio": 0.9473684430122375,
+      "ack_count": 36.0,
+      "syn_count": 4.0,
+      "fin_count": 2.0
+    },
+    "evaluation_metadata": {
+      "source_split": "validation",
+      "rule_matching_feature_space": "Phase 1 frozen StandardScaler output",
+      "display_feature_space": "original validation values",
+      "test_data_used": false
+    }
+  },
+  {
+    "alert_id": "ALERT-FR-DEMO-004",
+    "timestamp": "2026-10-06T12:23:13Z",
+    "flow_id": "FLOW-VAL-CIC_UNSW_NB15-2939",
+    "severity": "MEDIUM",
+    "threat_verdict": "MALICIOUS ATTACK",
+    "confidence_score": 0.9438502673796791,
+    "fused_precision": 0.9438502673796791,
+    "triggered_fsra_rule": {
+      "fsra_rule_id": "FSRA_RULE_011",
+      "rule_active": true,
+      "corroborating_org_count": 1,
+      "corroborating_orgs": [
+        "Org_B"
+      ],
+      "consensus_tier": "Tier 3: Single-Silo Localized Consensus (1 Organization)",
+      "conditions_satisfied": [
+        {
+          "feature": "packet_size_max",
+          "value": -0.4661440849304199,
+          "min": -0.4672083407640457,
+          "max": -0.4629513770341873
+        },
+        {
+          "feature": "header_length",
+          "value": -0.045557040721178055,
+          "min": -Infinity,
+          "max": -0.04535579867660999
+        },
+        {
+          "feature": "packet_size_min",
+          "value": 0.2754329741001129,
+          "min": -0.2464083582162857,
+          "max": Infinity
+        }
+      ]
+    },
+    "threat_intelligence": {
+      "mitre_technique_id": "T1595",
+      "mitre_technique_name": "Active Scanning",
+      "attack_family": "Reconnaissance",
+      "intelligence_justification": "Probing traffic: high SYN ratio, many short flows, low total payload."
+    },
+    "mapping_status": "ATT&CK_MAPPING_FROM_FROZEN_FSRA",
+    "federated_lineage_trace": {
+      "contributing_organizations_count": 1,
+      "contributing_local_rules": [
+        {
+          "local_rule_id": "Org_B_RULE_003",
+          "originating_organization": "Org_B",
+          "local_precision": 0.9438502673796791,
+          "local_support": 748,
+          "contribution_weight": 0.9438502673796791
+        }
+      ],
+      "summary": "Matched frozen FSRA rule FSRA_RULE_011 and traced 1 independent organizational silo(s) through 1 contributing local rule(s)."
+    },
+    "automated_mitigation_playbook": {
+      "playbook_id": "PB-RECON-02",
+      "title": "Active Reconnaissance Investigation",
+      "action_tier": "Tier 2 \u2014 Reconnaissance Investigation",
+      "recommended_action": "Investigate repeated probing behavior and correlate source infrastructure with other reconnaissance observations."
+    },
+    "flow_metrics_snapshot": {
+      "packet_rate": 200000.0,
+      "total_packets": 2.0,
+      "header_length": 16.0,
+      "packet_size_min": 56.0,
+      "packet_size_max": 56.0,
+      "packet_size_mean": 56.0,
+      "packet_size_std": 0.0,
+      "fin_flag_ratio": 0.0,
+      "syn_flag_ratio": 0.0,
+      "psh_flag_ratio": 0.0,
+      "ack_flag_ratio": 0.0,
+      "ack_count": 0.0,
+      "syn_count": 0.0,
+      "fin_count": 0.0
+    },
+    "evaluation_metadata": {
+      "source_split": "validation",
+      "rule_matching_feature_space": "Phase 1 frozen StandardScaler output",
+      "display_feature_space": "original validation values",
+      "test_data_used": false
+    }
+  },
+  {
+    "alert_id": "ALERT-FR-DEMO-005",
+    "timestamp": "2026-10-06T12:23:13Z",
+    "flow_id": "FLOW-VAL-CICIoT2023-67",
+    "severity": "CRITICAL",
+    "threat_verdict": "MALICIOUS ATTACK",
+    "confidence_score": 1.0,
+    "fused_precision": 0.8168551724137931,
+    "triggered_fsra_rule": {
+      "fsra_rule_id": "FSRA_RULE_002",
+      "rule_active": true,
+      "corroborating_org_count": 3,
+      "corroborating_orgs": [
+        "Org_A",
+        "Org_B",
+        "Org_C"
+      ],
+      "consensus_tier": "Tier 1: Global Multi-Silo Consensus (3 Organizations)",
+      "conditions_satisfied": [
+        {
+          "feature": "packet_size_std",
+          "value": -0.24893149733543396,
+          "min": -Infinity,
+          "max": Infinity
+        },
+        {
+          "feature": "psh_flag_ratio",
+          "value": -0.08176727592945099,
+          "min": -Infinity,
+          "max": Infinity
+        },
+        {
+          "feature": "packet_size_mean",
+          "value": -0.22088521718978882,
+          "min": -Infinity,
+          "max": Infinity
+        },
+        {
+          "feature": "header_length",
+          "value": -0.045074060559272766,
+          "min": -Infinity,
+          "max": Infinity
+        },
+        {
+          "feature": "packet_rate",
+          "value": -0.2014596313238144,
+          "min": -Infinity,
+          "max": Infinity
+        },
+        {
+          "feature": "total_packets",
+          "value": -0.03303081914782524,
+          "min": -Infinity,
+          "max": -0.023177466355264187
+        },
+        {
+          "feature": "syn_flag_ratio",
+          "value": 0.2770769000053406,
+          "min": -Infinity,
+          "max": Infinity
+        },
+        {
+          "feature": "packet_size_max",
+          "value": -0.19298841059207916,
+          "min": -Infinity,
+          "max": Infinity
+        },
+        {
+          "feature": "packet_size_min",
+          "value": 0.3798012435436249,
+          "min": -Infinity,
+          "max": Infinity
+        },
+        {
+          "feature": "ack_flag_ratio",
+          "value": 0.2700463831424713,
+          "min": -Infinity,
+          "max": Infinity
+        },
+        {
+          "feature": "fin_flag_ratio",
+          "value": 0.9575895071029663,
+          "min": -Infinity,
+          "max": Infinity
+        },
+        {
+          "feature": "fin_count",
+          "value": 1.426806926727295,
+          "min": 0.9534240365028381,
+          "max": Infinity
+        }
+      ]
+    },
+    "threat_intelligence": {
+      "mitre_technique_id": "T1498",
+      "mitre_technique_name": "Network Denial of Service",
+      "attack_family": "DoS/DDoS",
+      "intelligence_justification": "Slowloris keeps partial HTTP connections open. Visible as: high SYN ratio, low fin/rst, tiny packet size. Maps to T1498 (Network DoS) \u2014 application-layer variant."
+    },
+    "mapping_status": "ATT&CK_MAPPING_FROM_FROZEN_FSRA",
+    "federated_lineage_trace": {
+      "contributing_organizations_count": 3,
+      "contributing_local_rules": [
+        {
+          "local_rule_id": "Org_A_RULE_004",
+          "originating_organization": "Org_A",
+          "local_precision": 0.6481846327047566,
+          "local_support": 10659,
+          "contribution_weight": 0.6481846327047566
+        },
+        {
+          "local_rule_id": "Org_A_RULE_007",
+          "originating_organization": "Org_A",
+          "local_precision": 0.5900900900900901,
+          "local_support": 666,
+          "contribution_weight": 0.5900900900900901
+        },
+        {
+          "local_rule_id": "Org_A_RULE_011",
+          "originating_organization": "Org_A",
+          "local_precision": 0.9911894273127754,
+          "local_support": 227,
+          "contribution_weight": 0.9911894273127754
+        },
+        {
+          "local_rule_id": "Org_A_RULE_013",
+          "originating_organization": "Org_A",
+          "local_precision": 0.9876292153872225,
+          "local_support": 11802,
+          "contribution_weight": 0.9876292153872225
+        },
+        {
+          "local_rule_id": "Org_A_RULE_014",
+          "originating_organization": "Org_A",
+          "local_precision": 0.9996637525218561,
+          "local_support": 11896,
+          "contribution_weight": 0.9996637525218561
+        },
+        {
+          "local_rule_id": "Org_A_RULE_018",
+          "originating_organization": "Org_A",
+          "local_precision": 0.7204610951008645,
+          "local_support": 347,
+          "contribution_weight": 0.7204610951008645
+        },
+        {
+          "local_rule_id": "Org_A_RULE_019",
+          "originating_organization": "Org_A",
+          "local_precision": 0.739751552795031,
+          "local_support": 1610,
+          "contribution_weight": 0.739751552795031
+        },
+        {
+          "local_rule_id": "Org_A_RULE_020",
+          "originating_organization": "Org_A",
+          "local_precision": 0.9556274363440325,
+          "local_support": 36171,
+          "contribution_weight": 0.9556274363440325
+        },
+        {
+          "local_rule_id": "Org_B_RULE_005",
+          "originating_organization": "Org_B",
+          "local_precision": 0.6462765957446809,
+          "local_support": 376,
+          "contribution_weight": 0.6462765957446809
+        },
+        {
+          "local_rule_id": "Org_B_RULE_007",
+          "originating_organization": "Org_B",
+          "local_precision": 0.5704590818363273,
+          "local_support": 5010,
+          "contribution_weight": 0.5704590818363273
+        },
+        {
+          "local_rule_id": "Org_B_RULE_015",
+          "originating_organization": "Org_B",
+          "local_precision": 0.8942731277533039,
+          "local_support": 227,
+          "contribution_weight": 0.8942731277533039
+        },
+        {
+          "local_rule_id": "Org_B_RULE_016",
+          "originating_organization": "Org_B",
+          "local_precision": 0.6859205776173285,
+          "local_support": 277,
+          "contribution_weight": 0.6859205776173285
+        },
+        {
+          "local_rule_id": "Org_B_RULE_017",
+          "originating_organization": "Org_B",
+          "local_precision": 0.5576208178438662,
+          "local_support": 269,
+          "contribution_weight": 0.5576208178438662
+        },
+        {
+          "local_rule_id": "Org_B_RULE_019",
+          "originating_organization": "Org_B",
+          "local_precision": 0.9446902654867256,
+          "local_support": 452,
+          "contribution_weight": 0.9446902654867256
+        },
+        {
+          "local_rule_id": "Org_B_RULE_020",
+          "originating_organization": "Org_B",
+          "local_precision": 0.9525423728813559,
+          "local_support": 590,
+          "contribution_weight": 0.9525423728813559
+        },
+        {
+          "local_rule_id": "Org_B_RULE_021",
+          "originating_organization": "Org_B",
+          "local_precision": 0.9437229437229437,
+          "local_support": 231,
+          "contribution_weight": 0.9437229437229437
+        },
+        {
+          "local_rule_id": "Org_B_RULE_022",
+          "originating_organization": "Org_B",
+          "local_precision": 0.9743589743589743,
+          "local_support": 195,
+          "contribution_weight": 0.9743589743589743
+        },
+        {
+          "local_rule_id": "Org_B_RULE_023",
+          "originating_organization": "Org_B",
+          "local_precision": 0.9845679012345679,
+          "local_support": 324,
+          "contribution_weight": 0.9845679012345679
+        },
+        {
+          "local_rule_id": "Org_C_RULE_001",
+          "originating_organization": "Org_C",
+          "local_precision": 1.0,
+          "local_support": 3613,
+          "contribution_weight": 1.0
+        },
+        {
+          "local_rule_id": "Org_C_RULE_002",
+          "originating_organization": "Org_C",
+          "local_precision": 0.610578837639673,
+          "local_support": 42689,
+          "contribution_weight": 0.610578837639673
+        },
+        {
+          "local_rule_id": "Org_C_RULE_003",
+          "originating_organization": "Org_C",
+          "local_precision": 0.8435505704892671,
+          "local_support": 5171,
+          "contribution_weight": 0.8435505704892671
+        },
+        {
+          "local_rule_id": "Org_C_RULE_004",
+          "originating_organization": "Org_C",
+          "local_precision": 0.9993747394747812,
+          "local_support": 4798,
+          "contribution_weight": 0.9993747394747812
+        },
+        {
+          "local_rule_id": "Org_C_RULE_006",
+          "originating_organization": "Org_C",
+          "local_precision": 0.9982458937968426,
+          "local_support": 6271,
+          "contribution_weight": 0.9982458937968426
+        },
+        {
+          "local_rule_id": "Org_C_RULE_007",
+          "originating_organization": "Org_C",
+          "local_precision": 0.847682119205298,
+          "local_support": 151,
+          "contribution_weight": 0.847682119205298
+        },
+        {
+          "local_rule_id": "Org_C_RULE_008",
+          "originating_organization": "Org_C",
+          "local_precision": 0.9294117647058824,
+          "local_support": 255,
+          "contribution_weight": 0.9294117647058824
+        },
+        {
+          "local_rule_id": "Org_C_RULE_010",
+          "originating_organization": "Org_C",
+          "local_precision": 0.6798780487804879,
+          "local_support": 328,
+          "contribution_weight": 0.6798780487804879
+        },
+        {
+          "local_rule_id": "Org_C_RULE_013",
+          "originating_organization": "Org_C",
+          "local_precision": 0.7865853658536586,
+          "local_support": 164,
+          "contribution_weight": 0.7865853658536586
+        },
+        {
+          "local_rule_id": "Org_C_RULE_014",
+          "originating_organization": "Org_C",
+          "local_precision": 0.6916666666666667,
+          "local_support": 120,
+          "contribution_weight": 0.6916666666666667
+        },
+        {
+          "local_rule_id": "Org_C_RULE_015",
+          "originating_organization": "Org_C",
+          "local_precision": 0.963963963963964,
+          "local_support": 111,
+          "contribution_weight": 0.963963963963964
+        }
+      ],
+      "summary": "Matched frozen FSRA rule FSRA_RULE_002 and traced 3 independent organizational silo(s) through 29 contributing local rule(s)."
+    },
+    "automated_mitigation_playbook": {
+      "playbook_id": "PB-DOS-01",
+      "title": "Denial-of-Service Containment",
+      "action_tier": "Tier 1 \u2014 Traffic Containment",
+      "recommended_action": "Rate-limit or block the offending flow pattern, isolate the affected endpoint or segment, and correlate surrounding traffic for additional attack sources."
+    },
+    "flow_metrics_snapshot": {
+      "packet_rate": 73.58570098876953,
+      "total_packets": 10.0,
+      "header_length": 25.600000381469727,
+      "packet_size_min": 66.0,
+      "packet_size_max": 441.0,
+      "packet_size_mean": 121.5,
+      "packet_size_std": 121.2007064819336,
+      "fin_flag_ratio": 0.20000000298023224,
+      "syn_flag_ratio": 0.10000000149011612,
+      "psh_flag_ratio": 0.10000000149011612,
+      "ack_flag_ratio": 0.6000000238418579,
+      "ack_count": 6.0,
+      "syn_count": 1.0,
+      "fin_count": 2.0
+    },
+    "evaluation_metadata": {
+      "source_split": "validation",
+      "rule_matching_feature_space": "Phase 1 frozen StandardScaler output",
+      "display_feature_space": "original validation values",
+      "test_data_used": false
+    }
+  },
+  {
+    "alert_id": "ALERT-FR-DEMO-006",
+    "timestamp": "2026-10-06T12:23:13Z",
+    "flow_id": "FLOW-VAL-CICIoT2023-75",
+    "severity": "MEDIUM",
+    "threat_verdict": "MALICIOUS ATTACK",
+    "confidence_score": 0.9438502673796791,
+    "fused_precision": 0.9438502673796791,
+    "triggered_fsra_rule": {
+      "fsra_rule_id": "FSRA_RULE_011",
+      "rule_active": true,
+      "corroborating_org_count": 1,
+      "corroborating_orgs": [
+        "Org_B"
+      ],
+      "consensus_tier": "Tier 3: Single-Silo Localized Consensus (1 Organization)",
+      "conditions_satisfied": [
+        {
+          "feature": "packet_size_max",
+          "value": -0.46330612897872925,
+          "min": -0.4672083407640457,
+          "max": -0.4629513770341873
+        },
+        {
+          "feature": "header_length",
+          "value": -0.046362005174160004,
+          "min": -Infinity,
+          "max": -0.04535579867660999
+        },
+        {
+          "feature": "packet_size_min",
+          "value": 0.3171802759170532,
+          "min": -0.2464083582162857,
+          "max": Infinity
+        }
+      ]
+    },
+    "threat_intelligence": {
+      "mitre_technique_id": "T1595",
+      "mitre_technique_name": "Active Scanning",
+      "attack_family": "Reconnaissance",
+      "intelligence_justification": "Probing traffic: high SYN ratio, many short flows, low total payload."
+    },
+    "mapping_status": "ATT&CK_MAPPING_FROM_FROZEN_FSRA",
+    "federated_lineage_trace": {
+      "contributing_organizations_count": 1,
+      "contributing_local_rules": [
+        {
+          "local_rule_id": "Org_B_RULE_003",
+          "originating_organization": "Org_B",
+          "local_precision": 0.9438502673796791,
+          "local_support": 748,
+          "contribution_weight": 0.9438502673796791
+        }
+      ],
+      "summary": "Matched frozen FSRA rule FSRA_RULE_011 and traced 1 independent organizational silo(s) through 1 contributing local rule(s)."
+    },
+    "automated_mitigation_playbook": {
+      "playbook_id": "PB-RECON-02",
+      "title": "Active Reconnaissance Investigation",
+      "action_tier": "Tier 2 \u2014 Reconnaissance Investigation",
+      "recommended_action": "Investigate repeated probing behavior and correlate source infrastructure with other reconnaissance observations."
+    },
+    "flow_metrics_snapshot": {
+      "packet_rate": 42772.83203125,
+      "total_packets": 100.0,
+      "header_length": 0.0,
+      "packet_size_min": 60.0,
+      "packet_size_max": 60.0,
+      "packet_size_mean": 60.0,
+      "packet_size_std": 0.0,
+      "fin_flag_ratio": 0.0,
+      "syn_flag_ratio": 0.0,
+      "psh_flag_ratio": 0.0,
+      "ack_flag_ratio": 0.0,
+      "ack_count": 0.0,
+      "syn_count": 0.0,
+      "fin_count": 0.0
+    },
+    "evaluation_metadata": {
+      "source_split": "validation",
+      "rule_matching_feature_space": "Phase 1 frozen StandardScaler output",
+      "display_feature_space": "original validation values",
+      "test_data_used": false
+    }
+  },
+  {
+    "alert_id": "ALERT-FR-DEMO-007",
+    "timestamp": "2026-10-06T12:23:13Z",
+    "flow_id": "FLOW-VAL-CICIoT2023-78403",
+    "severity": "MEDIUM",
+    "threat_verdict": "MALICIOUS ATTACK",
+    "confidence_score": 0.7120622568093385,
+    "fused_precision": 0.7120622568093385,
+    "triggered_fsra_rule": {
+      "fsra_rule_id": "FSRA_RULE_018",
+      "rule_active": true,
+      "corroborating_org_count": 1,
+      "corroborating_orgs": [
+        "Org_B"
+      ],
+      "consensus_tier": "Tier 3: Single-Silo Localized Consensus (1 Organization)",
+      "conditions_satisfied": [
+        {
+          "feature": "packet_size_max",
+          "value": 0.5683000683784485,
+          "min": 0.5228923857212067,
+          "max": Infinity
+        },
+        {
+          "feature": "psh_flag_ratio",
+          "value": -0.6018076539039612,
+          "min": -Infinity,
+          "max": -0.5932069420814514
+        },
+        {
+          "feature": "packet_size_std",
+          "value": 0.8197054862976074,
+          "min": -Infinity,
+          "max": 0.8952242434024811
+        },
+        {
+          "feature": "packet_rate",
+          "value": -0.2017335742712021,
+          "min": -Infinity,
+          "max": -0.20173120498657227
+        }
+      ]
+    },
+    "threat_intelligence": {
+      "mitre_technique_id": "T1190",
+      "mitre_technique_name": "Exploit Public-Facing Application",
+      "attack_family": "Execution",
+      "intelligence_justification": "XSS payloads traverse HTTP, appear as normal-rate flows with slightly larger-than-typical payload sizes."
+    },
+    "mapping_status": "ATT&CK_MAPPING_FROM_FROZEN_FSRA",
+    "federated_lineage_trace": {
+      "contributing_organizations_count": 1,
+      "contributing_local_rules": [
+        {
+          "local_rule_id": "Org_B_RULE_014",
+          "originating_organization": "Org_B",
+          "local_precision": 0.7120622568093385,
+          "local_support": 257,
+          "contribution_weight": 0.7120622568093385
+        }
+      ],
+      "summary": "Matched frozen FSRA rule FSRA_RULE_018 and traced 1 independent organizational silo(s) through 1 contributing local rule(s)."
+    },
+    "automated_mitigation_playbook": {
+      "playbook_id": "PB-EXPLOIT-01",
+      "title": "Exploit Public-Facing Service Investigation",
+      "action_tier": "Tier 1 \u2014 Service Isolation",
+      "recommended_action": "Inspect the exposed service, isolate the affected asset where necessary, and review application and authentication logs for exploitation evidence."
+    },
+    "flow_metrics_snapshot": {
+      "packet_rate": 29.45142364501953,
+      "total_packets": 10.0,
+      "header_length": 25.200000762939453,
+      "packet_size_min": 60.0,
+      "packet_size_max": 1514.0,
+      "packet_size_mean": 369.20001220703125,
+      "packet_size_std": 605.1704711914062,
+      "fin_flag_ratio": 0.0,
+      "syn_flag_ratio": 0.0,
+      "psh_flag_ratio": 0.0,
+      "ack_flag_ratio": 0.800000011920929,
+      "ack_count": 8.0,
+      "syn_count": 0.0,
+      "fin_count": 0.0
+    },
+    "evaluation_metadata": {
+      "source_split": "validation",
+      "rule_matching_feature_space": "Phase 1 frozen StandardScaler output",
+      "display_feature_space": "original validation values",
+      "test_data_used": false
+    }
+  },
+  {
+    "alert_id": "ALERT-FR-DEMO-008",
+    "timestamp": "2026-10-06T12:23:13Z",
+    "flow_id": "FLOW-VAL-CICIDS2017-1717",
+    "severity": "MEDIUM",
+    "threat_verdict": "MALICIOUS ATTACK",
+    "confidence_score": 0.7120622568093385,
+    "fused_precision": 0.7120622568093385,
+    "triggered_fsra_rule": {
+      "fsra_rule_id": "FSRA_RULE_018",
+      "rule_active": true,
+      "corroborating_org_count": 1,
+      "corroborating_orgs": [
+        "Org_B"
+      ],
+      "consensus_tier": "Tier 3: Single-Silo Localized Consensus (1 Organization)",
+      "conditions_satisfied": [
+        {
+          "feature": "packet_size_max",
+          "value": 0.5966798663139343,
+          "min": 0.5228923857212067,
+          "max": Infinity
+        },
+        {
+          "feature": "psh_flag_ratio",
+          "value": -0.6018076539039612,
+          "min": -Infinity,
+          "max": -0.5932069420814514
+        },
+        {
+          "feature": "packet_size_std",
+          "value": 0.6943543553352356,
+          "min": -Infinity,
+          "max": 0.8952242434024811
+        },
+        {
+          "feature": "packet_rate",
+          "value": -0.2019139975309372,
+          "min": -Infinity,
+          "max": -0.20173120498657227
+        }
+      ]
+    },
+    "threat_intelligence": {
+      "mitre_technique_id": "T1190",
+      "mitre_technique_name": "Exploit Public-Facing Application",
+      "attack_family": "Execution",
+      "intelligence_justification": "XSS payloads traverse HTTP, appear as normal-rate flows with slightly larger-than-typical payload sizes."
+    },
+    "mapping_status": "ATT&CK_MAPPING_FROM_FROZEN_FSRA",
+    "federated_lineage_trace": {
+      "contributing_organizations_count": 1,
+      "contributing_local_rules": [
+        {
+          "local_rule_id": "Org_B_RULE_014",
+          "originating_organization": "Org_B",
+          "local_precision": 0.7120622568093385,
+          "local_support": 257,
+          "contribution_weight": 0.7120622568093385
+        }
+      ],
+      "summary": "Matched frozen FSRA rule FSRA_RULE_018 and traced 1 independent organizational silo(s) through 1 contributing local rule(s)."
+    },
+    "automated_mitigation_playbook": {
+      "playbook_id": "PB-EXPLOIT-01",
+      "title": "Exploit Public-Facing Service Investigation",
+      "action_tier": "Tier 1 \u2014 Service Isolation",
+      "recommended_action": "Inspect the exposed service, isolate the affected asset where necessary, and review application and authentication logs for exploitation evidence."
+    },
+    "flow_metrics_snapshot": {
+      "packet_rate": 0.3825934827327728,
+      "total_packets": 39.0,
+      "header_length": 888.0,
+      "packet_size_min": 0.0,
+      "packet_size_max": 1554.0,
+      "packet_size_mean": 297.375,
+      "packet_size_std": 548.4008178710938,
+      "fin_flag_ratio": 0.0,
+      "syn_flag_ratio": 0.0,
+      "psh_flag_ratio": 0.0,
+      "ack_flag_ratio": 0.025641025975346565,
+      "ack_count": 1.0,
+      "syn_count": 0.0,
+      "fin_count": 0.0
+    },
+    "evaluation_metadata": {
+      "source_split": "validation",
+      "rule_matching_feature_space": "Phase 1 frozen StandardScaler output",
+      "display_feature_space": "original validation values",
+      "test_data_used": false
+    }
+  },
+  {
+    "alert_id": "ALERT-FR-DEMO-009",
+    "timestamp": "2026-10-06T12:23:13Z",
+    "flow_id": "FLOW-VAL-CICIDS2017-15588",
+    "severity": "MEDIUM",
+    "threat_verdict": "MALICIOUS ATTACK",
+    "confidence_score": 0.7120622568093385,
+    "fused_precision": 0.7120622568093385,
+    "triggered_fsra_rule": {
+      "fsra_rule_id": "FSRA_RULE_018",
+      "rule_active": true,
+      "corroborating_org_count": 1,
+      "corroborating_orgs": [
+        "Org_B"
+      ],
+      "consensus_tier": "Tier 3: Single-Silo Localized Consensus (1 Organization)",
+      "conditions_satisfied": [
+        {
+          "feature": "packet_size_max",
+          "value": 0.5299873352050781,
+          "min": 0.5228923857212067,
+          "max": Infinity
+        },
+        {
+          "feature": "psh_flag_ratio",
+          "value": -0.6018076539039612,
+          "min": -Infinity,
+          "max": -0.5932069420814514
+        },
+        {
+          "feature": "packet_size_std",
+          "value": 0.8801320195198059,
+          "min": -Infinity,
+          "max": 0.8952242434024811
+        },
+        {
+          "feature": "packet_rate",
+          "value": -0.20188862085342407,
+          "min": -Infinity,
+          "max": -0.20173120498657227
+        }
+      ]
+    },
+    "threat_intelligence": {
+      "mitre_technique_id": "T1190",
+      "mitre_technique_name": "Exploit Public-Facing Application",
+      "attack_family": "Execution",
+      "intelligence_justification": "XSS payloads traverse HTTP, appear as normal-rate flows with slightly larger-than-typical payload sizes."
+    },
+    "mapping_status": "ATT&CK_MAPPING_FROM_FROZEN_FSRA",
+    "federated_lineage_trace": {
+      "contributing_organizations_count": 1,
+      "contributing_local_rules": [
+        {
+          "local_rule_id": "Org_B_RULE_014",
+          "originating_organization": "Org_B",
+          "local_precision": 0.7120622568093385,
+          "local_support": 257,
+          "contribution_weight": 0.7120622568093385
+        }
+      ],
+      "summary": "Matched frozen FSRA rule FSRA_RULE_018 and traced 1 independent organizational silo(s) through 1 contributing local rule(s)."
+    },
+    "automated_mitigation_playbook": {
+      "playbook_id": "PB-EXPLOIT-01",
+      "title": "Exploit Public-Facing Service Investigation",
+      "action_tier": "Tier 1 \u2014 Service Isolation",
+      "recommended_action": "Inspect the exposed service, isolate the affected asset where necessary, and review application and authentication logs for exploitation evidence."
+    },
+    "flow_metrics_snapshot": {
+      "packet_rate": 4.470276355743408,
+      "total_packets": 11.0,
+      "header_length": 256.0,
+      "packet_size_min": 0.0,
+      "packet_size_max": 1460.0,
+      "packet_size_mean": 355.0,
+      "packet_size_std": 632.5367431640625,
+      "fin_flag_ratio": 0.0,
+      "syn_flag_ratio": 0.09090909361839294,
+      "psh_flag_ratio": 0.0,
+      "ack_flag_ratio": 0.09090909361839294,
+      "ack_count": 1.0,
+      "syn_count": 1.0,
+      "fin_count": 0.0
+    },
+    "evaluation_metadata": {
+      "source_split": "validation",
+      "rule_matching_feature_space": "Phase 1 frozen StandardScaler output",
+      "display_feature_space": "original validation values",
+      "test_data_used": false
+    }
+  },
+  {
+    "alert_id": "ALERT-FR-DEMO-010",
+    "timestamp": "2026-10-06T12:23:13Z",
+    "flow_id": "FLOW-VAL-CICIDS2017-34047",
+    "severity": "MEDIUM",
+    "threat_verdict": "MALICIOUS ATTACK",
+    "confidence_score": 0.7120622568093385,
+    "fused_precision": 0.7120622568093385,
+    "triggered_fsra_rule": {
+      "fsra_rule_id": "FSRA_RULE_018",
+      "rule_active": true,
+      "corroborating_org_count": 1,
+      "corroborating_orgs": [
+        "Org_B"
+      ],
+      "consensus_tier": "Tier 3: Single-Silo Localized Consensus (1 Organization)",
+      "conditions_satisfied": [
+        {
+          "feature": "packet_size_max",
+          "value": 1.7077494859695435,
+          "min": 0.5228923857212067,
+          "max": Infinity
+        },
+        {
+          "feature": "psh_flag_ratio",
+          "value": -0.6018076539039612,
+          "min": -Infinity,
+          "max": -0.5932069420814514
+        },
+        {
+          "feature": "packet_size_std",
+          "value": 0.6032790541648865,
+          "min": -Infinity,
+          "max": 0.8952242434024811
+        },
+        {
+          "feature": "packet_rate",
+          "value": -0.20191340148448944,
+          "min": -Infinity,
+          "max": -0.20173120498657227
+        }
+      ]
+    },
+    "threat_intelligence": {
+      "mitre_technique_id": "T1190",
+      "mitre_technique_name": "Exploit Public-Facing Application",
+      "attack_family": "Execution",
+      "intelligence_justification": "XSS payloads traverse HTTP, appear as normal-rate flows with slightly larger-than-typical payload sizes."
+    },
+    "mapping_status": "ATT&CK_MAPPING_FROM_FROZEN_FSRA",
+    "federated_lineage_trace": {
+      "contributing_organizations_count": 1,
+      "contributing_local_rules": [
+        {
+          "local_rule_id": "Org_B_RULE_014",
+          "originating_organization": "Org_B",
+          "local_precision": 0.7120622568093385,
+          "local_support": 257,
+          "contribution_weight": 0.7120622568093385
+        }
+      ],
+      "summary": "Matched frozen FSRA rule FSRA_RULE_018 and traced 1 independent organizational silo(s) through 1 contributing local rule(s)."
+    },
+    "automated_mitigation_playbook": {
+      "playbook_id": "PB-EXPLOIT-01",
+      "title": "Exploit Public-Facing Service Investigation",
+      "action_tier": "Tier 1 \u2014 Service Isolation",
+      "recommended_action": "Inspect the exposed service, isolate the affected asset where necessary, and review application and authentication logs for exploitation evidence."
+    },
+    "flow_metrics_snapshot": {
+      "packet_rate": 0.47787603735923767,
+      "total_packets": 53.0,
+      "header_length": 1180.0,
+      "packet_size_min": 0.0,
+      "packet_size_max": 3120.0,
+      "packet_size_mean": 177.9629669189453,
+      "packet_size_std": 507.1541748046875,
+      "fin_flag_ratio": 0.0,
+      "syn_flag_ratio": 0.0,
+      "psh_flag_ratio": 0.0,
+      "ack_flag_ratio": 0.01886792480945587,
+      "ack_count": 1.0,
+      "syn_count": 0.0,
+      "fin_count": 0.0
+    },
+    "evaluation_metadata": {
+      "source_split": "validation",
+      "rule_matching_feature_space": "Phase 1 frozen StandardScaler output",
+      "display_feature_space": "original validation values",
+      "test_data_used": false
+    }
+  }
+]

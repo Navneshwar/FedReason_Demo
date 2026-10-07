@@ -1,0 +1,4 @@
+system_or_artifact,measured_or_demonstrated,rule_id_coverage,condition_coverage,mitre_mapping_coverage,provenance_lineage_coverage,playbook_coverage,evidence_scope
+Standalone neural detector,No symbolic attribution fields,0.0,0.0,0.0,0.0,0.0,System output is probability-based; no claim of analyst-triage time or trust score is made.
+Frozen FSRA rule layer,Rule conditions + rule metadata,1.0,1.0,,1.0,,Frozen Phase 3 rule schema; mapping varies by rule.
+Phase 4 FedReason alert demonstrations (n=10),Validation-derived alert artifact coverage,1.0,1.0,1.0,1.0,1.0,Demonstration artifacts only; not a human-subject or SOC-time experiment.

@@ -1,0 +1,166 @@
+# ============================================================
+# FedReason Demo - .gitignore
+# ============================================================
+
+# -------------------------
+# Python virtual environment
+# -------------------------
+venv/
+.venv/
+env/
+ENV/
+backend/venv/
+backend/.venv/
+
+# -------------------------
+# Python cache / compiled files
+# -------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+
+# -------------------------
+# Python tooling
+# -------------------------
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.pyre/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+
+# -------------------------
+# Environment / secrets
+# -------------------------
+.env
+.env.*
+!.env.example
+*.secret
+*.pem
+*.key
+
+# -------------------------
+# Node / React / Vite
+# -------------------------
+node_modules/
+frontend/node_modules/
+
+dist/
+frontend/dist/
+
+.vite/
+frontend/.vite/
+
+.npm/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# -------------------------
+# Build / coverage output
+# -------------------------
+coverage/
+frontend/coverage/
+
+# -------------------------
+# Runtime generated files
+# -------------------------
+runtime/*
+!runtime/.gitkeep
+
+# Uploaded files generated during demo
+runtime/uploads/
+runtime/output/
+runtime/results/
+runtime/logs/
+
+# -------------------------
+# Logs
+# -------------------------
+*.log
+
+# -------------------------
+# Temporary files
+# -------------------------
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+*.pid
+
+# -------------------------
+# OS generated files
+# -------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# -------------------------
+# Windows thumbnail/cache files
+# -------------------------
+ehthumbs.db
+
+# -------------------------
+# IDE / editor files
+# -------------------------
+.vscode/
+.idea/
+*.code-workspace
+
+# -------------------------
+# Jupyter
+# -------------------------
+.ipynb_checkpoints/
+
+# -------------------------
+# Python local packaging
+# -------------------------
+*.egg-info/
+.eggs/
+build/
+develop-eggs/
+dist/
+
+# -------------------------
+# Test / temporary exports
+# -------------------------
+test_output/
+tmp/
+temp/
+
+# -------------------------
+# Local database files
+# -------------------------
+*.db
+*.sqlite
+*.sqlite3
+
+# -------------------------
+# Generated frontend artifacts
+# -------------------------
+frontend/.eslintcache
+
+# -------------------------
+# Optional large local captures
+# Uncomment these if you do NOT want PCAP files in Git
+# -------------------------
+# *.pcap
+# *.pcapng
+# *.cap
+
+# -------------------------
+# Optional large model artifacts
+# Uncomment if models will be stored outside Git/LFS
+# -------------------------
+# models/*.pt
+# models/*.pth
+# models/*.joblib
+# models/*.pkl
+# models/*.onnx

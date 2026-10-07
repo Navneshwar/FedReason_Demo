@@ -1,0 +1,102 @@
+{
+  "phase": "Phase 2",
+  "architecture": [
+    14,
+    128,
+    64,
+    1
+  ],
+  "rounds": 12,
+  "local_epochs": 2,
+  "batch_size": 2048,
+  "learning_rate": 0.0005,
+  "weight_decay": 0.0001,
+  "fedprox_mu": 0.01,
+  "global_positive_class_weight": 1.797995888811374,
+  "seed_list": [
+    42,
+    52,
+    62
+  ],
+  "dirichlet_alphas": [
+    10.0,
+    1.0,
+    0.5,
+    0.1
+  ],
+  "dirichlet_rounds": 8,
+  "dirichlet_local_epochs": 1,
+  "max_local_train_rows_per_client": 250000,
+  "validation_probe_rows_per_client": 60000,
+  "selection_metric": "validation pooled macro_f1, with balanced_accuracy and roc_auc tie-breakers",
+  "device": "cpu",
+  "raw_rows_shared": false,
+  "synthetic_data": false,
+  "full_test_evaluation": true,
+  "test_used_for_model_selection": false,
+  "test_used_for_handoff_seed_selection": false,
+  "artifact_policy": "overwrite existing canonical Phase 2 paths; no versioned result filenames",
+  "selected_handoff_seed": {
+    "FedAvg": 42,
+    "FedProx": 42
+  },
+  "selected_handoff_round": {
+    "FedAvg": 3,
+    "FedProx": 12
+  },
+  "reproducibility_snapshot": {
+    "timestamp_utc": "2026-10-06T05:44:44.724474+00:00",
+    "device": "cpu",
+    "seeds": [
+      42,
+      52,
+      62
+    ],
+    "features": [
+      "packet_rate",
+      "total_packets",
+      "header_length",
+      "packet_size_min",
+      "packet_size_max",
+      "packet_size_mean",
+      "packet_size_std",
+      "fin_flag_ratio",
+      "syn_flag_ratio",
+      "psh_flag_ratio",
+      "ack_flag_ratio",
+      "ack_count",
+      "syn_count",
+      "fin_count"
+    ],
+    "fedprox_mu": 0.01,
+    "main_config": {
+      "rounds": 12,
+      "local_epochs": 2,
+      "batch_size": 2048,
+      "learning_rate": 0.0005,
+      "weight_decay": 0.0001,
+      "hidden_layers": [
+        128,
+        64
+      ],
+      "selection_metric": "macro_f1",
+      "selection_tie_breakers": [
+        "balanced_accuracy",
+        "roc_auc"
+      ],
+      "seed_list": [
+        42,
+        52,
+        62
+      ]
+    },
+    "dirichlet_alphas": [
+      10.0,
+      1.0,
+      0.5,
+      0.1
+    ],
+    "dirichlet_rounds": 8,
+    "dirichlet_local_epochs": 1
+  }
+}

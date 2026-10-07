@@ -1,0 +1,11 @@
+{
+  "purpose": "Local FedReason UI demo inputs. These are not research benchmark data.",
+  "generation": "12 exact Phase 4 validation-derived alert snapshots + 48 synthetic benign-looking rows per organization.",
+  "backend_behavior": "The backend ignores demo metadata columns and uses only the frozen 14-feature contract.",
+  "rows_per_organization": 60,
+  "files": {
+    "org_a_demo.csv": 60,
+    "org_b_demo.csv": 60,
+    "org_c_demo.csv": 60
+  }
+}

@@ -1,0 +1,2 @@
+total_test_rows,active_attack_rules,total_aggregated_rules,rule_coverage_ratio,accuracy,attack_precision,attack_recall,attack_f1,macro_f1,balanced_accuracy,false_positive_rate,true_positives,false_positives,true_negatives,false_negatives,test_specificity_filter_applied,specificity_filter_split
+1158055,3,6,0.05420208884724819,0.803180332540337,0.8216635600375982,0.19222240029220042,0.31155800143772766,0.5983673317885897,0.5898206408179324,0.012581118656335629,51575,11194,878552,216734,False,validation

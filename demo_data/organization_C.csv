@@ -1,0 +1,3 @@
+demo_alert_id,packet_rate,total_packets,header_length,packet_size_min,packet_size_max,packet_size_mean,packet_size_std,fin_flag_ratio,syn_flag_ratio,psh_flag_ratio,ack_flag_ratio,ack_count,syn_count,fin_count,source_dataset,expected_fsra_rule,expected_mitre,demo_case
+ALERT-FR-DEMO-005,73.58570098876953,10.0,25.600000381469727,66.0,441.0,121.5,121.2007064819336,0.20000000298023224,0.10000000149011612,0.10000000149011612,0.6000000238418579,6.0,1.0,2.0,CICIoT2023,FSRA_RULE_002,T1498,Network DoS / Multi-Silo Consensus
+ALERT-FR-DEMO-002,8.44647216796875,16.0,528.0,0.0,1448.0,481.8823547363281,676.3521728515625,0.125,0.25,0.25,0.875,14.0,4.0,2.0,CIC-UNSW-NB15,FSRA_RULE_002,T1498,Network DoS / Multi-Silo Consensus

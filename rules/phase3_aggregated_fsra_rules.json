@@ -1,0 +1,1026 @@
+{
+  "metadata": {
+    "phase": "Phase 3",
+    "similarity_threshold": 0.65,
+    "specificity_ceiling": 0.05,
+    "specificity_calibration_split": "validation",
+    "semantic_calibration_split": "validation",
+    "test_used_for_specificity_filtering": false,
+    "test_used_for_rule_selection": false,
+    "test_used_for_semantic_calibration": false,
+    "activation_policy": "attack target class AND validation specificity ceiling AND defensible attack semantic",
+    "mitre_policy": "ATT&CK mapping is optional when an internal attack family is defensible; no ATT&CK ID is invented for generic or unmapped categories",
+    "formula": "formal FSRA specification in Section 1 of this notebook"
+  },
+  "rules": [
+    {
+      "fsra_rule_id": "FSRA_RULE_001",
+      "target_class": 0,
+      "label": "BENIGN",
+      "source_rule_ids": [
+        "Org_A_RULE_001",
+        "Org_A_RULE_002",
+        "Org_A_RULE_003",
+        "Org_A_RULE_005",
+        "Org_A_RULE_006",
+        "Org_B_RULE_013",
+        "Org_C_RULE_009"
+      ],
+      "corroborating_org_count": 3,
+      "corroborating_orgs": [
+        "Org_A",
+        "Org_B",
+        "Org_C"
+      ],
+      "fused_precision": 0.9746235112763716,
+      "corroboration_factor": 2.0,
+      "aggregated_confidence_score": 1.0,
+      "total_global_support": 779107,
+      "candidate_attack_family": "Benign",
+      "candidate_mitre_id": null,
+      "candidate_mitre_technique": null,
+      "mapping_source_label": "Benign",
+      "mapping_validation_weight": 0.0,
+      "conditions": {
+        "packet_size_std": {
+          "min": -Infinity,
+          "max": 2.2573227882385254
+        },
+        "psh_flag_ratio": {
+          "min": -Infinity,
+          "max": 1.0449869334697723
+        },
+        "packet_size_mean": {
+          "min": -Infinity,
+          "max": Infinity
+        },
+        "header_length": {
+          "min": -Infinity,
+          "max": Infinity
+        },
+        "packet_rate": {
+          "min": -Infinity,
+          "max": Infinity
+        },
+        "packet_size_max": {
+          "min": -Infinity,
+          "max": Infinity
+        },
+        "total_packets": {
+          "min": -Infinity,
+          "max": -0.03251222148537636
+        },
+        "syn_flag_ratio": {
+          "min": -Infinity,
+          "max": 0.7130792438983917
+        },
+        "fin_count": {
+          "min": -Infinity,
+          "max": 0.9534240365028381
+        }
+      },
+      "is_active_specificity": false,
+      "validation_coverage_ratio": 0.5461983432508991,
+      "validation_precision": 0.08935329333738355,
+      "semantic_mapping_defensible": false,
+      "is_active_semantic": false,
+      "is_active": false
+    },
+    {
+      "fsra_rule_id": "FSRA_RULE_002",
+      "target_class": 1,
+      "label": "ATTACK",
+      "source_rule_ids": [
+        "Org_A_RULE_004",
+        "Org_A_RULE_007",
+        "Org_A_RULE_011",
+        "Org_A_RULE_013",
+        "Org_A_RULE_014",
+        "Org_A_RULE_018",
+        "Org_A_RULE_019",
+        "Org_A_RULE_020",
+        "Org_B_RULE_005",
+        "Org_B_RULE_007",
+        "Org_B_RULE_015",
+        "Org_B_RULE_016",
+        "Org_B_RULE_017",
+        "Org_B_RULE_019",
+        "Org_B_RULE_020",
+        "Org_B_RULE_021",
+        "Org_B_RULE_022",
+        "Org_B_RULE_023",
+        "Org_C_RULE_001",
+        "Org_C_RULE_002",
+        "Org_C_RULE_003",
+        "Org_C_RULE_004",
+        "Org_C_RULE_006",
+        "Org_C_RULE_007",
+        "Org_C_RULE_008",
+        "Org_C_RULE_010",
+        "Org_C_RULE_013",
+        "Org_C_RULE_014",
+        "Org_C_RULE_015"
+      ],
+      "corroborating_org_count": 3,
+      "corroborating_orgs": [
+        "Org_A",
+        "Org_B",
+        "Org_C"
+      ],
+      "fused_precision": 0.8168551724137931,
+      "corroboration_factor": 2.0,
+      "aggregated_confidence_score": 1.0,
+      "total_global_support": 145000,
+      "candidate_attack_family": "DoS/DDoS",
+      "candidate_mitre_id": "T1498",
+      "candidate_mitre_technique": "Network Denial of Service",
+      "mapping_source_label": "1",
+      "mapping_validation_weight": 49014.0,
+      "conditions": {
+        "packet_size_std": {
+          "min": -Infinity,
+          "max": Infinity
+        },
+        "psh_flag_ratio": {
+          "min": -Infinity,
+          "max": Infinity
+        },
+        "packet_size_mean": {
+          "min": -Infinity,
+          "max": Infinity
+        },
+        "header_length": {
+          "min": -Infinity,
+          "max": Infinity
+        },
+        "packet_rate": {
+          "min": -Infinity,
+          "max": Infinity
+        },
+        "total_packets": {
+          "min": -Infinity,
+          "max": -0.023177466355264187
+        },
+        "syn_flag_ratio": {
+          "min": -Infinity,
+          "max": Infinity
+        },
+        "packet_size_max": {
+          "min": -Infinity,
+          "max": Infinity
+        },
+        "packet_size_min": {
+          "min": -Infinity,
+          "max": Infinity
+        },
+        "ack_flag_ratio": {
+          "min": -Infinity,
+          "max": Infinity
+        },
+        "fin_flag_ratio": {
+          "min": -Infinity,
+          "max": Infinity
+        },
+        "fin_count": {
+          "min": 0.9534240365028381,
+          "max": Infinity
+        }
+      },
+      "is_active_specificity": true,
+      "validation_coverage_ratio": 0.014147005805362226,
+      "validation_precision": 0.3315619082523975,
+      "semantic_mapping_defensible": true,
+      "is_active_semantic": true,
+      "is_active": true
+    },
+    {
+      "fsra_rule_id": "FSRA_RULE_003",
+      "target_class": 0,
+      "label": "BENIGN",
+      "source_rule_ids": [
+        "Org_A_RULE_008",
+        "Org_B_RULE_010"
+      ],
+      "corroborating_org_count": 2,
+      "corroborating_orgs": [
+        "Org_A",
+        "Org_B"
+      ],
+      "fused_precision": 0.7451751625760437,
+      "corroboration_factor": 1.584962500721156,
+      "aggregated_confidence_score": 1.0,
+      "total_global_support": 19068,
+      "candidate_attack_family": "Benign",
+      "candidate_mitre_id": null,
+      "candidate_mitre_technique": null,
+      "mapping_source_label": "Benign",
+      "mapping_validation_weight": 0.0,
+      "conditions": {
+        "packet_size_std": {
+          "min": 1.9292799830436707,
+          "max": 2.2573227882385254
+        },
+        "psh_flag_ratio": {
+          "min": -Infinity,
+          "max": 0.9149768054485321
+        },
+        "packet_size_mean": {
+          "min": -0.5817536115646362,
+          "max": Infinity
+        },
+        "total_packets": {
+          "min": -0.023177466355264187,
+          "max": Infinity
+        },
+        "packet_size_max": {
+          "min": -Infinity,
+          "max": 0.5228923857212067
+        },
+        "header_length": {
+          "min": -0.04535579867660999,
+          "max": Infinity
+        },
+        "packet_rate": {
+          "min": -0.201793871819973,
+          "max": -0.2011854201555252
+        }
+      },
+      "is_active_specificity": false,
+      "validation_coverage_ratio": 0.0,
+      "validation_precision": 0.0,
+      "semantic_mapping_defensible": false,
+      "is_active_semantic": false,
+      "is_active": false
+    },
+    {
+      "fsra_rule_id": "FSRA_RULE_004",
+      "target_class": 0,
+      "label": "BENIGN",
+      "source_rule_ids": [
+        "Org_A_RULE_009",
+        "Org_A_RULE_010",
+        "Org_A_RULE_012",
+        "Org_C_RULE_011",
+        "Org_C_RULE_012"
+      ],
+      "corroborating_org_count": 2,
+      "corroborating_orgs": [
+        "Org_A",
+        "Org_C"
+      ],
+      "fused_precision": 0.8431143930560954,
+      "corroboration_factor": 1.584962500721156,
+      "aggregated_confidence_score": 1.0,
+      "total_global_support": 7719,
+      "candidate_attack_family": "Benign",
+      "candidate_mitre_id": null,
+      "candidate_mitre_technique": null,
+      "mapping_source_label": "BENIGN",
+      "mapping_validation_weight": 0.0,
+      "conditions": {
+        "packet_size_std": {
+          "min": -Infinity,
+          "max": 2.2573227882385254
+        },
+        "psh_flag_ratio": {
+          "min": 0.9149768054485321,
+          "max": Infinity
+        },
+        "header_length": {
+          "min": -Infinity,
+          "max": -0.04072724096477032
+        },
+        "packet_rate": {
+          "min": -Infinity,
+          "max": -0.19262362271547318
+        },
+        "total_packets": {
+          "min": -Infinity,
+          "max": -0.03251222148537636
+        },
+        "packet_size_max": {
+          "min": 0.5661715865135193,
+          "max": Infinity
+        },
+        "syn_flag_ratio": {
+          "min": -Infinity,
+          "max": 0.7130792438983917
+        }
+      },
+      "is_active_specificity": false,
+      "validation_coverage_ratio": 0.0022208664662989996,
+      "validation_precision": 0.39571984435797664,
+      "semantic_mapping_defensible": false,
+      "is_active_semantic": false,
+      "is_active": false
+    },
+    {
+      "fsra_rule_id": "FSRA_RULE_005",
+      "target_class": 0,
+      "label": "BENIGN",
+      "source_rule_ids": [
+        "Org_A_RULE_015"
+      ],
+      "corroborating_org_count": 1,
+      "corroborating_orgs": [
+        "Org_A"
+      ],
+      "fused_precision": 0.8867924528301887,
+      "corroboration_factor": 1.0,
+      "aggregated_confidence_score": 0.8867924528301887,
+      "total_global_support": 159,
+      "candidate_attack_family": "Benign",
+      "candidate_mitre_id": null,
+      "candidate_mitre_technique": null,
+      "mapping_source_label": "BENIGN",
+      "mapping_validation_weight": 0.0,
+      "conditions": {
+        "packet_size_std": {
+          "min": 2.2573227882385254,
+          "max": 2.724083185195923
+        },
+        "packet_size_mean": {
+          "min": -Infinity,
+          "max": 1.6489508748054504
+        },
+        "header_length": {
+          "min": -Infinity,
+          "max": -0.021307426504790783
+        }
+      },
+      "is_active_specificity": false,
+      "validation_coverage_ratio": 0.0002747998195654015,
+      "validation_precision": 0.29245283018867924,
+      "semantic_mapping_defensible": false,
+      "is_active_semantic": false,
+      "is_active": false
+    },
+    {
+      "fsra_rule_id": "FSRA_RULE_006",
+      "target_class": 0,
+      "label": "BENIGN",
+      "source_rule_ids": [
+        "Org_A_RULE_016"
+      ],
+      "corroborating_org_count": 1,
+      "corroborating_orgs": [
+        "Org_A"
+      ],
+      "fused_precision": 0.9832402234636871,
+      "corroboration_factor": 1.0,
+      "aggregated_confidence_score": 0.9832402234636871,
+      "total_global_support": 179,
+      "candidate_attack_family": "Benign",
+      "candidate_mitre_id": null,
+      "candidate_mitre_technique": null,
+      "mapping_source_label": "BENIGN",
+      "mapping_validation_weight": 0.0,
+      "conditions": {
+        "packet_size_std": {
+          "min": 2.724083185195923,
+          "max": 2.956619620323181
+        },
+        "packet_size_mean": {
+          "min": -Infinity,
+          "max": 1.6489508748054504
+        },
+        "header_length": {
+          "min": -Infinity,
+          "max": -0.021307426504790783
+        }
+      },
+      "is_active_specificity": false,
+      "validation_coverage_ratio": 0.00017110177444638205,
+      "validation_precision": 0.09595959595959595,
+      "semantic_mapping_defensible": false,
+      "is_active_semantic": false,
+      "is_active": false
+    },
+    {
+      "fsra_rule_id": "FSRA_RULE_007",
+      "target_class": 0,
+      "label": "BENIGN",
+      "source_rule_ids": [
+        "Org_A_RULE_017",
+        "Org_A_RULE_021",
+        "Org_A_RULE_023",
+        "Org_B_RULE_018"
+      ],
+      "corroborating_org_count": 2,
+      "corroborating_orgs": [
+        "Org_A",
+        "Org_B"
+      ],
+      "fused_precision": 0.8041575492341356,
+      "corroboration_factor": 1.584962500721156,
+      "aggregated_confidence_score": 1.0,
+      "total_global_support": 914,
+      "candidate_attack_family": "Benign",
+      "candidate_mitre_id": null,
+      "candidate_mitre_technique": null,
+      "mapping_source_label": "BENIGN",
+      "mapping_validation_weight": 0.0,
+      "conditions": {
+        "packet_size_std": {
+          "min": 1.0285178422927856,
+          "max": Infinity
+        },
+        "packet_size_mean": {
+          "min": -Infinity,
+          "max": Infinity
+        },
+        "header_length": {
+          "min": -Infinity,
+          "max": -0.021307426504790783
+        },
+        "total_packets": {
+          "min": -Infinity,
+          "max": Infinity
+        },
+        "syn_flag_ratio": {
+          "min": -0.15379597805440426,
+          "max": Infinity
+        },
+        "packet_size_max": {
+          "min": 0.5228923857212067,
+          "max": Infinity
+        },
+        "psh_flag_ratio": {
+          "min": -Infinity,
+          "max": -0.5932069420814514
+        }
+      },
+      "is_active_specificity": false,
+      "validation_coverage_ratio": 0.0007034184060573485,
+      "validation_precision": 0.35626535626535627,
+      "semantic_mapping_defensible": false,
+      "is_active_semantic": false,
+      "is_active": false
+    },
+    {
+      "fsra_rule_id": "FSRA_RULE_008",
+      "target_class": 0,
+      "label": "BENIGN",
+      "source_rule_ids": [
+        "Org_A_RULE_022"
+      ],
+      "corroborating_org_count": 1,
+      "corroborating_orgs": [
+        "Org_A"
+      ],
+      "fused_precision": 0.9951456310679612,
+      "corroboration_factor": 1.0,
+      "aggregated_confidence_score": 0.9951456310679612,
+      "total_global_support": 206,
+      "candidate_attack_family": "Benign",
+      "candidate_mitre_id": null,
+      "candidate_mitre_technique": null,
+      "mapping_source_label": "BENIGN",
+      "mapping_validation_weight": 0.0,
+      "conditions": {
+        "packet_size_std": {
+          "min": 2.2573227882385254,
+          "max": 2.7231175899505615
+        },
+        "packet_size_mean": {
+          "min": 1.6489508748054504,
+          "max": Infinity
+        },
+        "total_packets": {
+          "min": -0.023177466355264187,
+          "max": Infinity
+        }
+      },
+      "is_active_specificity": false,
+      "validation_coverage_ratio": 0.00025578851129358127,
+      "validation_precision": 0.30743243243243246,
+      "semantic_mapping_defensible": false,
+      "is_active_semantic": false,
+      "is_active": false
+    },
+    {
+      "fsra_rule_id": "FSRA_RULE_009",
+      "target_class": 0,
+      "label": "BENIGN",
+      "source_rule_ids": [
+        "Org_B_RULE_001"
+      ],
+      "corroborating_org_count": 1,
+      "corroborating_orgs": [
+        "Org_B"
+      ],
+      "fused_precision": 0.8461538461538461,
+      "corroboration_factor": 1.0,
+      "aggregated_confidence_score": 0.8461538461538461,
+      "total_global_support": 273,
+      "candidate_attack_family": null,
+      "candidate_mitre_id": null,
+      "candidate_mitre_technique": null,
+      "mapping_source_label": "Benign",
+      "mapping_validation_weight": 0.0,
+      "conditions": {
+        "packet_size_max": {
+          "min": -Infinity,
+          "max": 0.5228923857212067
+        },
+        "header_length": {
+          "min": -Infinity,
+          "max": -0.04535579867660999
+        },
+        "packet_size_min": {
+          "min": -Infinity,
+          "max": -0.2464083582162857
+        }
+      },
+      "is_active_specificity": false,
+      "validation_coverage_ratio": 0.0004415808421318244,
+      "validation_precision": 0.08414872798434442,
+      "semantic_mapping_defensible": false,
+      "is_active_semantic": false,
+      "is_active": false
+    },
+    {
+      "fsra_rule_id": "FSRA_RULE_010",
+      "target_class": 1,
+      "label": "ATTACK",
+      "source_rule_ids": [
+        "Org_B_RULE_002"
+      ],
+      "corroborating_org_count": 1,
+      "corroborating_orgs": [
+        "Org_B"
+      ],
+      "fused_precision": 0.4711111111111111,
+      "corroboration_factor": 1.0,
+      "aggregated_confidence_score": 0.4711111111111111,
+      "total_global_support": 675,
+      "candidate_attack_family": null,
+      "candidate_mitre_id": null,
+      "candidate_mitre_technique": null,
+      "mapping_source_label": "Benign",
+      "mapping_validation_weight": 0.0,
+      "conditions": {
+        "packet_size_max": {
+          "min": -Infinity,
+          "max": -0.4672083407640457
+        },
+        "header_length": {
+          "min": -Infinity,
+          "max": -0.04535579867660999
+        },
+        "packet_size_min": {
+          "min": -0.2464083582162857,
+          "max": Infinity
+        }
+      },
+      "is_active_specificity": true,
+      "validation_coverage_ratio": 0.0006558901353777978,
+      "validation_precision": 0.5270092226613966,
+      "semantic_mapping_defensible": false,
+      "is_active_semantic": false,
+      "is_active": false
+    },
+    {
+      "fsra_rule_id": "FSRA_RULE_011",
+      "target_class": 1,
+      "label": "ATTACK",
+      "source_rule_ids": [
+        "Org_B_RULE_003"
+      ],
+      "corroborating_org_count": 1,
+      "corroborating_orgs": [
+        "Org_B"
+      ],
+      "fused_precision": 0.9438502673796791,
+      "corroboration_factor": 1.0,
+      "aggregated_confidence_score": 0.9438502673796791,
+      "total_global_support": 748,
+      "candidate_attack_family": "Reconnaissance",
+      "candidate_mitre_id": "T1595",
+      "candidate_mitre_technique": "Active Scanning",
+      "mapping_source_label": "Reconnaissance",
+      "mapping_validation_weight": 748.0,
+      "conditions": {
+        "packet_size_max": {
+          "min": -0.4672083407640457,
+          "max": -0.4629513770341873
+        },
+        "header_length": {
+          "min": -Infinity,
+          "max": -0.04535579867660999
+        },
+        "packet_size_min": {
+          "min": -0.2464083582162857,
+          "max": Infinity
+        }
+      },
+      "is_active_specificity": true,
+      "validation_coverage_ratio": 0.039835604032471314,
+      "validation_precision": 0.9980910234717342,
+      "semantic_mapping_defensible": true,
+      "is_active_semantic": true,
+      "is_active": true
+    },
+    {
+      "fsra_rule_id": "FSRA_RULE_012",
+      "target_class": 0,
+      "label": "BENIGN",
+      "source_rule_ids": [
+        "Org_B_RULE_004"
+      ],
+      "corroborating_org_count": 1,
+      "corroborating_orgs": [
+        "Org_B"
+      ],
+      "fused_precision": 0.5301327885597549,
+      "corroboration_factor": 1.0,
+      "aggregated_confidence_score": 0.5301327885597549,
+      "total_global_support": 979,
+      "candidate_attack_family": null,
+      "candidate_mitre_id": null,
+      "candidate_mitre_technique": null,
+      "mapping_source_label": "Benign",
+      "mapping_validation_weight": 0.0,
+      "conditions": {
+        "packet_size_max": {
+          "min": -0.4629513770341873,
+          "max": 0.5228923857212067
+        },
+        "header_length": {
+          "min": -Infinity,
+          "max": -0.04535579867660999
+        },
+        "packet_size_min": {
+          "min": -0.2464083582162857,
+          "max": Infinity
+        },
+        "packet_size_mean": {
+          "min": -Infinity,
+          "max": 1.1333415508270264
+        }
+      },
+      "is_active_specificity": false,
+      "validation_coverage_ratio": 0.02609129230232128,
+      "validation_precision": 0.8192627430199053,
+      "semantic_mapping_defensible": false,
+      "is_active_semantic": false,
+      "is_active": false
+    },
+    {
+      "fsra_rule_id": "FSRA_RULE_013",
+      "target_class": 0,
+      "label": "BENIGN",
+      "source_rule_ids": [
+        "Org_B_RULE_006"
+      ],
+      "corroborating_org_count": 1,
+      "corroborating_orgs": [
+        "Org_B"
+      ],
+      "fused_precision": 0.9618008185538881,
+      "corroboration_factor": 1.0,
+      "aggregated_confidence_score": 0.9618008185538881,
+      "total_global_support": 1466,
+      "candidate_attack_family": null,
+      "candidate_mitre_id": null,
+      "candidate_mitre_technique": null,
+      "mapping_source_label": "Benign",
+      "mapping_validation_weight": 0.0,
+      "conditions": {
+        "packet_size_max": {
+          "min": -Infinity,
+          "max": 0.5228923857212067
+        },
+        "header_length": {
+          "min": -0.04535579867660999,
+          "max": -0.03760799579322338
+        },
+        "packet_rate": {
+          "min": -Infinity,
+          "max": -0.201793871819973
+        },
+        "psh_flag_ratio": {
+          "min": -Infinity,
+          "max": 0.30432331562042236
+        }
+      },
+      "is_active_specificity": false,
+      "validation_coverage_ratio": 0.031111141836457815,
+      "validation_precision": 0.21315482473195935,
+      "semantic_mapping_defensible": false,
+      "is_active_semantic": false,
+      "is_active": false
+    },
+    {
+      "fsra_rule_id": "FSRA_RULE_014",
+      "target_class": 0,
+      "label": "BENIGN",
+      "source_rule_ids": [
+        "Org_B_RULE_008"
+      ],
+      "corroborating_org_count": 1,
+      "corroborating_orgs": [
+        "Org_B"
+      ],
+      "fused_precision": 0.9937338739402876,
+      "corroboration_factor": 1.0,
+      "aggregated_confidence_score": 0.9937338739402876,
+      "total_global_support": 2713,
+      "candidate_attack_family": null,
+      "candidate_mitre_id": null,
+      "candidate_mitre_technique": null,
+      "mapping_source_label": "Benign",
+      "mapping_validation_weight": 0.0,
+      "conditions": {
+        "packet_size_max": {
+          "min": -Infinity,
+          "max": 0.5228923857212067
+        },
+        "header_length": {
+          "min": -0.04535579867660999,
+          "max": Infinity
+        },
+        "packet_rate": {
+          "min": -Infinity,
+          "max": -0.201793871819973
+        },
+        "psh_flag_ratio": {
+          "min": 0.30432331562042236,
+          "max": Infinity
+        },
+        "fin_count": {
+          "min": -Infinity,
+          "max": 0.9534240365028381
+        }
+      },
+      "is_active_specificity": false,
+      "validation_coverage_ratio": 0.008284609654633662,
+      "validation_precision": 0.09179096693439032,
+      "semantic_mapping_defensible": false,
+      "is_active_semantic": false,
+      "is_active": false
+    },
+    {
+      "fsra_rule_id": "FSRA_RULE_015",
+      "target_class": 0,
+      "label": "BENIGN",
+      "source_rule_ids": [
+        "Org_B_RULE_009"
+      ],
+      "corroborating_org_count": 1,
+      "corroborating_orgs": [
+        "Org_B"
+      ],
+      "fused_precision": 0.7063492063492064,
+      "corroboration_factor": 1.0,
+      "aggregated_confidence_score": 0.7063492063492064,
+      "total_global_support": 630,
+      "candidate_attack_family": null,
+      "candidate_mitre_id": null,
+      "candidate_mitre_technique": null,
+      "mapping_source_label": "Benign",
+      "mapping_validation_weight": 0.0,
+      "conditions": {
+        "packet_size_max": {
+          "min": -Infinity,
+          "max": 0.5228923857212067
+        },
+        "header_length": {
+          "min": -0.04535579867660999,
+          "max": Infinity
+        },
+        "packet_rate": {
+          "min": -Infinity,
+          "max": -0.201793871819973
+        },
+        "psh_flag_ratio": {
+          "min": 0.30432331562042236,
+          "max": Infinity
+        },
+        "fin_count": {
+          "min": 0.9534240365028381,
+          "max": Infinity
+        }
+      },
+      "is_active_specificity": false,
+      "validation_coverage_ratio": 0.0005573769925147294,
+      "validation_precision": 0.30387596899224806,
+      "semantic_mapping_defensible": false,
+      "is_active_semantic": false,
+      "is_active": false
+    },
+    {
+      "fsra_rule_id": "FSRA_RULE_016",
+      "target_class": 0,
+      "label": "BENIGN",
+      "source_rule_ids": [
+        "Org_B_RULE_011"
+      ],
+      "corroborating_org_count": 1,
+      "corroborating_orgs": [
+        "Org_B"
+      ],
+      "fused_precision": 0.9959451298421189,
+      "corroboration_factor": 1.0,
+      "aggregated_confidence_score": 0.9959451298421189,
+      "total_global_support": 46364,
+      "candidate_attack_family": null,
+      "candidate_mitre_id": null,
+      "candidate_mitre_technique": null,
+      "mapping_source_label": "Benign",
+      "mapping_validation_weight": 0.0,
+      "conditions": {
+        "packet_size_max": {
+          "min": -Infinity,
+          "max": 0.5228923857212067
+        },
+        "header_length": {
+          "min": -0.04535579867660999,
+          "max": Infinity
+        },
+        "packet_rate": {
+          "min": -0.201793871819973,
+          "max": -0.2011854201555252
+        },
+        "psh_flag_ratio": {
+          "min": 0.49605534970760345,
+          "max": Infinity
+        }
+      },
+      "is_active_specificity": false,
+      "validation_coverage_ratio": 0.04731655383743257,
+      "validation_precision": 0.09758012966852342,
+      "semantic_mapping_defensible": false,
+      "is_active_semantic": false,
+      "is_active": false
+    },
+    {
+      "fsra_rule_id": "FSRA_RULE_017",
+      "target_class": 0,
+      "label": "BENIGN",
+      "source_rule_ids": [
+        "Org_B_RULE_012"
+      ],
+      "corroborating_org_count": 1,
+      "corroborating_orgs": [
+        "Org_B"
+      ],
+      "fused_precision": 0.9739086121963648,
+      "corroboration_factor": 1.0,
+      "aggregated_confidence_score": 0.9739086121963648,
+      "total_global_support": 29435,
+      "candidate_attack_family": null,
+      "candidate_mitre_id": null,
+      "candidate_mitre_technique": null,
+      "mapping_source_label": "Benign",
+      "mapping_validation_weight": 0.0,
+      "conditions": {
+        "packet_size_max": {
+          "min": -Infinity,
+          "max": 0.5228923857212067
+        },
+        "header_length": {
+          "min": -0.04535579867660999,
+          "max": Infinity
+        },
+        "packet_rate": {
+          "min": -0.2011854201555252,
+          "max": -0.20000560581684113
+        }
+      },
+      "is_active_specificity": false,
+      "validation_coverage_ratio": 0.05635297431917913,
+      "validation_precision": 0.09387842728332209,
+      "semantic_mapping_defensible": false,
+      "is_active_semantic": false,
+      "is_active": false
+    },
+    {
+      "fsra_rule_id": "FSRA_RULE_018",
+      "target_class": 1,
+      "label": "ATTACK",
+      "source_rule_ids": [
+        "Org_B_RULE_014"
+      ],
+      "corroborating_org_count": 1,
+      "corroborating_orgs": [
+        "Org_B"
+      ],
+      "fused_precision": 0.7120622568093385,
+      "corroboration_factor": 1.0,
+      "aggregated_confidence_score": 0.7120622568093385,
+      "total_global_support": 257,
+      "candidate_attack_family": "Execution",
+      "candidate_mitre_id": "T1190",
+      "candidate_mitre_technique": "Exploit Public-Facing Application",
+      "mapping_source_label": "Exploits",
+      "mapping_validation_weight": 257.0,
+      "conditions": {
+        "packet_size_max": {
+          "min": 0.5228923857212067,
+          "max": Infinity
+        },
+        "psh_flag_ratio": {
+          "min": -Infinity,
+          "max": -0.5932069420814514
+        },
+        "packet_size_std": {
+          "min": -Infinity,
+          "max": 0.8952242434024811
+        },
+        "packet_rate": {
+          "min": -Infinity,
+          "max": -0.20173120498657227
+        }
+      },
+      "is_active_specificity": true,
+      "validation_coverage_ratio": 0.00043121103761992245,
+      "validation_precision": 0.374749498997996,
+      "semantic_mapping_defensible": true,
+      "is_active_semantic": true,
+      "is_active": true
+    },
+    {
+      "fsra_rule_id": "FSRA_RULE_019",
+      "target_class": 1,
+      "label": "ATTACK",
+      "source_rule_ids": [
+        "Org_C_RULE_005"
+      ],
+      "corroborating_org_count": 1,
+      "corroborating_orgs": [
+        "Org_C"
+      ],
+      "fused_precision": 0.9540918163672655,
+      "corroboration_factor": 1.0,
+      "aggregated_confidence_score": 0.9540918163672655,
+      "total_global_support": 501,
+      "candidate_attack_family": null,
+      "candidate_mitre_id": null,
+      "candidate_mitre_technique": null,
+      "mapping_source_label": "1",
+      "mapping_validation_weight": 0.0,
+      "conditions": {
+        "total_packets": {
+          "min": -Infinity,
+          "max": -0.03251222148537636
+        },
+        "packet_size_max": {
+          "min": -Infinity,
+          "max": 0.5661715865135193
+        },
+        "syn_flag_ratio": {
+          "min": 1.040080964565277,
+          "max": Infinity
+        },
+        "packet_size_min": {
+          "min": -Infinity,
+          "max": 0.3276170939207077
+        },
+        "packet_rate": {
+          "min": -Infinity,
+          "max": -0.20124071091413498
+        }
+      },
+      "is_active_specificity": true,
+      "validation_coverage_ratio": 0.006723089925216427,
+      "validation_precision": 0.305012853470437,
+      "semantic_mapping_defensible": false,
+      "is_active_semantic": false,
+      "is_active": false
+    },
+    {
+      "fsra_rule_id": "FSRA_RULE_020",
+      "target_class": 1,
+      "label": "ATTACK",
+      "source_rule_ids": [
+        "Org_C_RULE_016"
+      ],
+      "corroborating_org_count": 1,
+      "corroborating_orgs": [
+        "Org_C"
+      ],
+      "fused_precision": 1.0,
+      "corroboration_factor": 1.0,
+      "aggregated_confidence_score": 1.0,
+      "total_global_support": 120813,
+      "candidate_attack_family": null,
+      "candidate_mitre_id": null,
+      "candidate_mitre_technique": null,
+      "mapping_source_label": "1",
+      "mapping_validation_weight": 0.0,
+      "conditions": {
+        "total_packets": {
+          "min": -0.03251222148537636,
+          "max": Infinity
+        }
+      },
+      "is_active_specificity": false,
+      "validation_coverage_ratio": 0.3704725001425848,
+      "validation_precision": 0.35812070079517067,
+      "semantic_mapping_defensible": false,
+      "is_active_semantic": false,
+      "is_active": false
+    }
+  ]
+}

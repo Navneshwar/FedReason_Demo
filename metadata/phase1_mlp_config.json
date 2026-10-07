@@ -1,0 +1,16 @@
+{
+  "hidden_layers": [
+    128,
+    64
+  ],
+  "epochs_requested": 12,
+  "best_epoch": 12,
+  "learning_rate": 0.0005,
+  "batch_size": 4096,
+  "alpha": 0.0001,
+  "seed": 42,
+  "training_policy": "balanced real-row sample by class within each dataset",
+  "validation_policy": "validation metrics only; no test-set model selection",
+  "test_policy": "frozen test partitions evaluated only after model selection",
+  "model_role": "primary architecture-matched centralized neural reference"
+}
