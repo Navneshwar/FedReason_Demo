@@ -96,3 +96,30 @@ The backend accepts `.pcap` and `.pcapng` uploads so the UI can represent the in
 
 The frozen FSRA rules use open-ended intervals represented internally as `-inf`/`inf`. Python uses those values correctly for rule matching, but strict JSON responses cannot contain non-finite numbers. The backend therefore converts unbounded `min`/`max` fields to JSON `null` at the API boundary while preserving the original matching semantics. The frontend renders these as `∞`.
 
+
+## Research Analysis Dashboard
+
+The React UI now includes a third **Research Analysis** tab. It reads the frozen Phase 1–6 metrics through `GET /api/research-analysis` and renders:
+
+- Final system comparison: Attack F1 and ROC-AUC
+- Natural-silo FedAvg vs FedProx attack-F1 comparison
+- Dirichlet non-IID robustness across α = 10, 1, 0.5, 0.1
+- Seed-42 per-silo FedProx precision/recall/F1 diagnostics
+- Active FSRA rule precision and validation coverage
+- Corroboration sensitivity at k = 1, 2, 3
+- Dataset attack-rate profile
+- Membership-inference and gradient-inversion audit results
+
+The dashboard is explicitly labeled as a **frozen research artifact view** so the live demo analysis is not confused with the paper's frozen test-set metrics.
+
+## Live Run Analytics
+
+The Run FedReason screen now includes an embedded analytics section directly below the KPI cards. It visualizes the current uploaded-data run with:
+
+- Alert rate by organization (alert rate bars + FSRA-rate markers)
+- Detection composition (benign vs neural-only vs FSRA-confirmed)
+- FSRA rule activity
+- Alert severity distribution
+- Four interpretation tiles for alert rate, FSRA confirmation, neural-only detections, and high/critical alerts
+
+The separate **Research Analysis** tab remains the place for frozen Phase 1–6 research metrics. The live-run charts do not represent the research test-set results.

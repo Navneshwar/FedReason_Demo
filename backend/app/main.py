@@ -19,6 +19,7 @@ from .config import (
 from .engine import analyze_uploads
 from .model_service import load_model_bundle
 from .rule_service import RuleService
+from .research_analysis import RESEARCH_ANALYSIS
 
 
 def _json_safe(value):
@@ -161,6 +162,12 @@ def clear_organization(organization: str):
     if org_dir.exists():
         shutil.rmtree(org_dir)
     return {"status": "cleared", "organization": organization}
+
+
+@app.get("/api/research-analysis")
+def research_analysis():
+    """Return frozen Phase 1–6 research metrics for the frontend analysis dashboard."""
+    return _json_safe(RESEARCH_ANALYSIS)
 
 
 @app.post("/api/run")
